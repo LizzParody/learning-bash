@@ -2,6 +2,7 @@
 
 ## Questions about Bash (that I answer using spaced repetition software)
 
+# CHAPTER 1
 -  What GUI?  
  Graphical user interface.  
  Is a type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators. 
@@ -24,8 +25,7 @@ The shell is a program that takes keyboard commands and passes them to the opera
 
 - What is the shell prompt?  
 ```
-Lizzies-MacBook-Pro:~ Lizzie$  //it it appears whenever the shell is ready
-to accept input.
+Lizzies-MacBook-Pro:~ Lizzie$  //it it appears whenever the shell is ready to accept input.
 ```
 
 - What happens If the last character of the prompt is a hash mark (#) rather than a dollar sign?  
@@ -46,6 +46,8 @@ $ df
 
 - What is a virtual terminal or virtual console?  
 Even if we have no terminal emulator running, several terminal sessions continue to run behind the graphical desktop.
+
+# CHAPTER 2 
 
 - Print the current directory.  
 $ pwd -> print current working directory. The directory we are working on.
@@ -120,6 +122,8 @@ FALSE. They are case sensitive.
 
 - Is very important to not embed spaces in filenames.
 TRUE. Embedding spaces in filenames will make many command line tasks more difficult.
+
+# CHAPTER 3
 
 - List the files in /usr directory
 ```
@@ -217,4 +221,210 @@ Is a special kind of file that points to another file, (also known as a soft lin
 
 - What is a hard link?  
 Hard links also allow files to have multiple names, but they do it in a different way.
+
+# CHAPTER 4
+
+- What is a wildcard?
+Special characters to help you rapidly specify groups of filenames. (also known as globbing) It allows you to select filenames based on patterns of characters. 
+
+- What are the matches of the following wildcards?
+```
+*
+?
+[*characters*
+[!*characters*]
+[[:class:]]
+```
+```
+\*   // Any character
+?   // Any single character
+[ * characters* // any character that is a member of the set *characters*
+[!*characters*]  // Any character that is not a member of the set characters
+[[:class:]] // Any character that is a member of the specified class.
+```
+
+- Make a directory called example and add the files:
+Gorilla
+game.txt
+Soup
+3mosqueters 
+Then list the files that begins with g.
+```
+$ mkdir example
+$ cd example
+$ touch gorilla game soup
+$ ls ./g*
+```
+
+- Now print the files that begins with g and ends with .txt
+```
+$ ls g*txt
+```
+
+- List any files beginning with s, o w.
+```
+ls [sw]*
+```
+
+- List any files beginning with upper case.
+```
+ls [[:upper:]]*
+```
+
+- List any files beginning with a number.
+```
+ls [[:digit:]]*
+```
+
+- Qué es GNOME?  
+Es el entorno de escritorio para linux. El entorno de escritorio es un conjunto de software para ofrecer al usuario de una computadora una interacción amigable y cómoda.
+
+- Make a directory called meow in desktop
+```
+$ cd ~/Desktop
+$ mkdir meow
+```
+
+- What is the command for copy?
+```
+$ cp item1 item2
+```
+
+- What is the command -i and the command -r?
+-i is interactive. Before overwriting an existing file, prompt the user for confirmation. If this option is not specified, cp will silently overwrite files.
+-r means recursive Recursively copy directories and their contents. This option (or the -a option) is required when copying directories.
+
+- The command mv (move) is used to move files and rename them.  
+TRUE
+
+- Unix-like operating systems such as Linux do not have an undelete command. Once you delete something with rm, it’s gone  
+TRUE.
+
+- Remove using the interactive commnand the game file.
+rm -i game
+
+- What do you enter to delete a directory?
+rm -r * directory *
+
+- How do you override the --interactive option and ignore nonexistent
+  files? 
+with the command -f (force)
+
+- How do you create a symbolic link and a hard link?
+```
+ln * file link *  // to create hard link
+ln -s * item link * // to create symbolic links where item is a file
+o directory
+```
+
+- By default, every file has a single hard link that gives the file its name. When we create a hard link, we create an additional directory entry for a file.  
+TRUE
+
+- A hard link can reference a file outside its own filesystem.
+FALSE
+
+- A hard link can reference to files and directories.
+FALSE. A hard link cannot reference a directory.
+
+- When a hard link is deleted, the link is removed, but the contents of the file itself continue to exist 
+TRUE
+
+- A Symbolic links work by creating a special type of file that contains a text pointer to the referenced file or directory. 
+TRUE
+
+- When you delete a symbolic link, only the link is deleted, not the file itself. If the file is deleted before the symbolic link, the link will continue to exist but will point to nothing. (the link is broken) ls will list them as red.
+TRUE
+
+- Create a directory in the desktop call playground. And inside it
+  create tow directores called dir1 and dir2
+```
+$ cd ~/Desktop
+$ mkdir playground
+$ mkdir playground/dir1 playground/dir2
+```
+
+- Copy the passwd file fomr the /etc directory
+```
+$ cp /etc/passwd . 
+```
+
+- In the playground directory create a file called fun and create a
+  hard link
+$ touch fun
+$ ln fun fun-hard
+
+- Create a symbolic link in the file fun
+$ ln -s fun fun-sym
+
+
+# CHAPTER 5
+
+- What does the type command does?
+is a shell builtin that displays the kind of command the shell will execute, given a particular command name.
+```
+type * command *
+```
+
+- Find where is located cd.
+```
+which cd
+```
+
+- Get the documentation of cd.
+```
+help cd
+```
+
+- Display the manual page of ls
+```
+man ls
+```
+
+- Display a Very Brief Description of mkdir
+```
+whatis mkdir
+```
+
+- Get info about pwd
+```
+info pwd
+```
+
+- First change directory to /usr, then list the directory, and finally return to the original directory in one command line.
+```
+cd ~/usr; ls; -cd;
+```
+
+- Alias foo to:  cd ~/usr; ls; -cd; and then unalias it.
+```
+$ alias foo='cd /usr; ls; cd -'
+$ unalias foo
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
