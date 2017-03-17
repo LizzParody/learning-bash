@@ -312,8 +312,8 @@ with the command -f (force)
 
 - How do you create a symbolic link and a hard link?
 ```
-ln * file link *  // to create hard link
-ln -s * item link * // to create symbolic links where item is a file
+ln *file link*  // to create hard link
+ln -s *item link* // to create symbolic links where item is a file
 o directory
 ```
 
@@ -362,7 +362,7 @@ $ ln -s fun fun-sym
 - What does the type command does?
 is a shell builtin that displays the kind of command the shell will execute, given a particular command name.
 ```
-type * command *
+type *command*
 ```
 
 - Find where is located cd.
