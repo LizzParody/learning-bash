@@ -150,7 +150,7 @@ The ls command is given two options, the l option to produce long format output,
 $ cd /Document
 $ ls -ltr -> the r command means reverse.
 
-- The ls command has a large number of possible options. The most common are:
+- The ls command has a large number of possible options. The most common are:  
 -a  
 -d  
 -F  
@@ -304,7 +304,7 @@ TRUE.
 rm -i game
 
 - What do you enter to delete a directory?
-rm -r * directory *
+rm -r [directory]
 
 - How do you override the --interactive option and ignore nonexistent
   files? 
@@ -312,8 +312,8 @@ with the command -f (force)
 
 - How do you create a symbolic link and a hard link?
 ```
-ln *file link*  // to create hard link
-ln -s *item link* // to create symbolic links where item is a file
+ln [file link]  // to create hard link
+ln -s [item link] // to create symbolic links where item is a file
 o directory
 ```
 
@@ -362,7 +362,7 @@ $ ln -s fun fun-sym
 - What does the type command does?
 is a shell builtin that displays the kind of command the shell will execute, given a particular command name.
 ```
-type *command*
+type [command]
 ```
 
 - Find where is located cd.
@@ -401,8 +401,101 @@ $ alias foo='cd /usr; ls; cd -'
 $ unalias foo
 ```
 
+# CHAPTER 6
+
+- What is I/O redirection?
+I/O redirection allows us to change where output goes and where input comes from. Normally, output goes to the screen and input comes from the keyboard, but with I/O redirection we can change that.
+
+- What is the redirection operator?
+>
+
+- Print the result of ls bin in the file ls-output.txt.
+```
+$ ls -l /usr/bin/ > ~/Desktop/ls-output.txt
+```
+
+- Now print a directory that doesn't exist like ls -l /bin/usr > ls-output.txt. What happend to the ls-output.txt? because It returns an error in the shell and the file has zero length. when we redirect output with the > redirection operator, the destination file is always rewritten from the beginning
+
+- Write the history command in the file last500.txt and then delete what
+  is inside. 
+$ history > last500.txt
+$ > last500.txt
 
 
+- What is the operator to append an output instead of overwritting? 
+>>
+
+- Long list the /bin/usr error directory to error.txt
+$ ls -l /bin/usr 2> ls-error.txt
+
+- What does the cat command does?
+The cat command reads one or more files and copies them to standard output.
+
+- Create the files: file1 file2 file3 with the content line1 line2 and
+  line3.
+
+concatenate the three files into a single one.
+```
+$ touch file1 file2 file3
+$ echo line1 > file1
+$ echo line2 > file2
+$ echo line3 > file3
+cat file* > allFiles
+```
+
+- Using the command cat, create the file dog.txt and write "luna"
+  inside it.
+```
+$ cat > dog.txt
+luna
+CTRL-D // to tell cat it has reached the end of file.
+```
+
+- What does the pipelines does?
+Using the pipe operator | (vertical bar), the standard output of one command can be piped into the standard input of another.
+
+- Redirect the list of /usr/bin to less. And then sort ite
+```
+$ ls -l /usr/bin | less
+$ ls -l /usr/bin | sort | less
+```
+
+- What does the uniq command does?
+ uniq accepts a sorted list of data from either standard input or a single filename argument and, by default, removes any duplicates from the list.
+
+- What does the wc command does?
+The wc (word count) command is used to display the number of lines, words, and bytes contained in files. 
+
+- What does the wc -l command does?
+limits its output to only report lines. 
+
+- count and sort the number of lines in the /bin folder.
+```
+ls /bin | sort | wc -l
+```
+
+- What does the grep command does?
+When grep encounters a “pattern” in the file, it prints out the lines containing it.
+
+- Print all the files in /usr/bin folder that contain the world zim in it.
+```
+ls /usr/bin | grep zip
+```
+
+- Print the las 8 lines in the last500.txt file
+```
+tail -n 5 last500.txt
+```
+
+- Print the last 5 lines in /usr/bin directory.
+```
+ls /usr/bin | tail -n 5
+```
+- Print the first 10 lines and 5 line of the file last500.txt
+```
+head last500.txt
+head -n 5 last500.txt
+```
 
 
 
