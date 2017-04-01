@@ -399,7 +399,7 @@ cd ~/usr; ls; -cd;
 ```
 $ alias foo='cd /usr; ls; cd -'
 $ unalias foo
-```
+`` `
 
 # CHAPTER 6
 
@@ -497,8 +497,23 @@ head last500.txt
 head -n 5 last500.txt
 ```
 
+- What does echo $PATH print into the console?
+PATH is an environmental variable in Linux and other Unix-like operating systems that tells the shell which directories to search for executable files (i.e., ready-to-run programs) in response to commands issued by a user. Is considered to be the single most important environmental variable.
 
+- Shells typically end with the letters 'sh' (i.e. zsh, csh, etc.). Find all files that end with the string 'sh' in the /bin directory
+```
+ls /bin | grep 'sh$'
+```
 
+- Return the number of results that are returned by the history command.
+```
+history | wc -l
+```
+
+- The directories in the $PATH environment variable are typically separated with colons. List all the directories in the $PATH environment variable, but separate them with spaces.
+```
+echo $PATH | tr ":" " "
+```
 
 
 
