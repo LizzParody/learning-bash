@@ -515,6 +515,12 @@ history | wc -l
 echo $PATH | tr ":" " "
 ```
 
+- To change the prompt just how I wanted:
+```
+export PS1="\[\033[35m\]\u\[\033[1;33m\]@\[\033[1;30m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+alias ls='ls -GFh'
+ ```
+
 
 
 
