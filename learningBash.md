@@ -517,7 +517,7 @@ echo $PATH | tr ":" " "
 
 - To change the prompt just how I wanted:
 ```
-export PS1="\[\033[35m\]\u\[\033[1;33m\]@\[\033[1;30m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export PS1="\[\e[35m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[36m\]\w\[\e[m\]\[\e[30m\]\\$\[\e[m\] "
 alias ls='ls -GFh'
  ```
 
